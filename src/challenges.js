@@ -42,9 +42,8 @@ function highestCount(array) {
   let biggest;
   let countBiggest = 0;
   for(index = 0; index < array.length; index += 1) {
-    if(Math.max(array[index], array[index + 1]) || Math.max(array[index]), array[index + 1]){
-      biggest = array[index];
-    };
+    let biggest = Math.max(array[index], array[index + 1]);
+       
   };
   
   for(index = 0; index <= array.length; index += 1) {
@@ -77,34 +76,35 @@ function catAndMouse(mouse, cat1, cat2) {
 function fizzBuzz(array) {
   // seu código aqui
 
-let three = [];
-let five = [];
-let result = [];
+  let three = [];
+  let five = [];
+  let result = [];
 
-for(key in array){
-  if (array[key] % 3 === 0 && array[key] % 5 !== 0) {
-    three.push(array[key] / 3);
-    result.push('fizz');
+  for(key in array){
+    if (array[key] % 3 === 0 && array[key] % 5 !== 0) {
+      three.push(array[key] / 3);
+      result.push('fizz');
+    }
+    else if (array[key] % 5 === 0 && array[key] % 3 !== 0) {
+      five.push(array[key] / 5);
+      result.push('buzz');
+    }
+    else if (array[key] % 5 === 0 && array[key] % 3 === 0) {
+      five.push(array[key] / 5);
+      three.push(array[key] / 3);
+      result.push('fizzBuzz');
+    }
+    else{
+      result.push('bug!');
+    }  
   }
-  else if (array[key] % 5 === 0 && array[key] % 3 !== 0) {
-    five.push(array[key] / 5);
-    result.push('buzz');
+    return result;
   }
-  else if (array[key] % 5 === 0 && array[key] % 3 === 0) {
-    five.push(array[key] / 5);
-    three.push(array[key] / 3);
-    result.push('fizzBuzz');
-  }
-  else{
-    result.push('bug!');
-  }  
-}
-  return result;
-}
 
 // Desafio 9
-function encode() {
+function encode(string) {
   // seu código aqui
+
 }
 function decode() {
   // seu código aqui
