@@ -1,21 +1,28 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aquiiii
+function compareTrue(first, second) {
+  if(first && second == true){
+    return true;
+  }
+    return false;
 }
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(base, height) {
+  return (base * height) / 2;
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(array) {
+  return array.split(' ');
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(array) {
+  firstString = array[0];
+  lastString = array.pop();
+  string = lastString +', '+ firstString;
+
+  return string;
 }
 
 // Desafio 5
