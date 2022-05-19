@@ -24,7 +24,7 @@ function concatName(array) {
   // seu código aqui
   let firstString = array[0];
   let lastString = array.pop();
-  let string = lastString +', '+ firstString;
+  let string = `${lastString}, ${firstString}`;
 
   return string;
 }
@@ -48,7 +48,7 @@ function highestCount(array) {
       countBiggest += 1;
     }
   }
-return countBiggest;
+  return countBiggest;
 }
 
 // Desafio 7
@@ -80,54 +80,41 @@ function fizzBuzz(array) {
     if (array[key] % 3 === 0 && array[key] % 5 !== 0) {
       three.push(array[key] / 3);
       result.push('fizz');
-    }
-    else if (array[key] % 5 === 0 && array[key] % 3 !== 0) {
+    } else if (array[key] % 5 === 0 && array[key] % 3 !== 0) {
       five.push(array[key] / 5);
       result.push('buzz');
-    }
-    else if (array[key] % 5 === 0 && array[key] % 3 === 0) {
+    } else if (array[key] % 5 === 0 && array[key] % 3 === 0) {
       five.push(array[key] / 5);
       three.push(array[key] / 3);
       result.push('fizzBuzz');
-    }
-    else {
+    } else {
       result.push('bug!');
-    }  
+    }
   }
-return result;
+  return result;
 }
 
 // Desafio 9
 function encode(words) {
   // seu código aqui
- let wordsEncode = words.split('');
+  let wordsEncode = words.split('');
 
   for (let i = 0; i < words.length; i += 1) {
-
-      if (wordsEncode[i] === 'a') {
-          wordsEncode[i] = '1';
-      }
-
-      else if (wordsEncode[i] === 'e') {
-          wordsEncode[i] = '2';
-      }
-
-      else if (wordsEncode[i] === 'i') {
-          wordsEncode[i] = '3';
-      }
-          
-      else if (wordsEncode[i] === 'o') {
-          wordsEncode[i] = '4';
-      }
-
-      else if (wordsEncode[i] === 'u') {
-          wordsEncode[i] = '5';
-      }
+    if (wordsEncode[i] === 'a') {
+      wordsEncode[i] = '1';
+    } else if (wordsEncode[i] === 'e') {
+      wordsEncode[i] = '2';
+    } else if (wordsEncode[i] === 'i') {
+      wordsEncode[i] = '3';
+    } else if (wordsEncode[i] === 'o') {
+      wordsEncode[i] = '4';
+    } else if (wordsEncode[i] === 'u') {
+      wordsEncode[i] = '5';
+    }
   }
   wordsEncode = wordsEncode.join('');
   return wordsEncode;
-} 
-
+}
 
 function decode(words) {
   // seu código aqui
@@ -135,35 +122,43 @@ function decode(words) {
   let wordsDecode = words.split('');
 
   for (let i = 0; i < words.length; i += 1) {
-
     if (wordsDecode[i] === '1') {
       wordsDecode[i] = 'a';
-    }
-
-    else if (wordsDecode[i] === '2') {
+    } else if (wordsDecode[i] === '2') {
       wordsDecode[i] = 'e';
-    }
-
-    else if (wordsDecode[i] === '3') {
+    } else if (wordsDecode[i] === '3') {
       wordsDecode[i] = 'i';
-    }
-        
-    else if (wordsDecode[i] === '4') {
+    } else if (wordsDecode[i] === '4') {
       wordsDecode[i] = 'o';
-    }
-
-    else if (wordsDecode[i] === '5') {
+    } else if (wordsDecode[i] === '5') {
       wordsDecode[i] = 'u';
     }
   }
   wordsDecode = wordsDecode.join('');
   return wordsDecode;
-} 
+}
 
 // Desafio 10
 function techList(array, string) {
   // seu código aqui
 
+  let results = [];
+  let item;
+
+  array = array.sort();
+
+  if (array.length === 0 || string === null) {
+    return 'Vazio!';
+  }
+
+  for (value of array) {
+    item = {
+      tech: value,
+      name: string,
+    };
+    results.push(item);
+  }
+  return results;
 }
 
 module.exports = {
