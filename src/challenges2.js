@@ -1,7 +1,32 @@
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(array) {
+  // Definir variáveis auxiliares
+  let counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let result;
+
+  // Testes das entradas
+  if (array.length !== 11) {
+    return 'Array com tamanho incorreto.'
+  }
+
+  for (value of array){
+    if (value < 0 || value > 9) {
+      return 'não é possível gerar um número de telefone com esses valores'
+    }
+    counts[value] = counts[value] + 1;
+  }
+
+  for(value of counts){
+    if (value >= 3){
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+  }
+
+  //Formatação dos números
+  result = "("+ array.slice(0,2).join('') + ") " + array.slice(2,7).join('') + "-" + array.slice(7,11).join('');
+  return result;
 }
+
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
